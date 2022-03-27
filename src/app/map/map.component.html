@@ -1,0 +1,14 @@
+<ng-container>
+  <div class="map-wrapper">
+    <mgl-map
+      [style]="
+        'https://api.maptiler.com/maps/streets/style.json?key=get_your_own_OpIi9ZULNHzrESv6T2vL'
+      "
+      [zoom]="[5]"
+      [center]="[longitude, latitude]"
+      class="map"
+    >
+      <mgl-marker [lngLat]="[longitude, latitude]"></mgl-marker>
+    </mgl-map>
+  </div>
+</ng-container>

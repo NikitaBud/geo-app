@@ -1,0 +1,28 @@
+<ng-container>
+  <div class="input-wrapper">
+    <input
+      class="search-input"
+      id="search"
+      type="text"
+      [formControl]="searchInput"
+      autocomplete="off"
+      (input)="getLocation()"
+    />
+    <div
+      class="search-result-field"
+      *ngIf="results && results.length"
+      [class.hide]="hideResults"
+    >
+      <div class="search-result-item" *ngFor="let item of results">
+        <a class="search-result-button" (click)="selectTag(item)">
+          <span class="search-result-city">
+            {{ item.city ? item.city : item.country }}
+          </span>
+          <span class="search-result-country" *ngIf="item.city">
+            {{ item.state }}, {{ item.country }}
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</ng-container>
